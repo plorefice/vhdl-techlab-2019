@@ -1,2 +1,5 @@
 # Waveform files
 *.vcd
+
+# Build artifacts
+*.cf

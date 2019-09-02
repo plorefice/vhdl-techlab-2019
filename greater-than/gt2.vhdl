@@ -1,0 +1,34 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity gt2 is
+    port (
+        a, b : in  std_logic_vector (1 downto 0);
+        q    : out std_logic
+    );
+end entity;
+
+architecture structural of gt2 is
+    -- Declare internal signals
+    signal p0, p1, p2 : std_logic;
+begin
+
+    --
+    -- Truth table of `q` (rows is `a`, columns is `b`):
+    --
+    --       | 00 | 01 | 11 | 10
+    --    00 |  0    0    0    0
+    --    01 |  1    0    0    0
+    --    11 |  1    1    0    1
+    --    10 |  1    1    0    0
+    --
+
+    -- Component output
+    q <= p0 or p1 or p2;
+
+    -- Intermediate products
+    p0 <= a(1) and (not b(1));                               -- bottom-left 2x2 square
+    p1 <= (not a(1)) and a(0) and (not b(1)) and (not b(0)); -- cell @ (2, 1) in the grid
+    p2 <= a(1) and a(0) and b(1) and (not b(0));             -- cell @ (4, 3) in the grid
+
+end architecture;
