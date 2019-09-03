@@ -11,8 +11,6 @@ entity bit_eq2 is
     );
 end entity;
 
--- Notice that we are changing the architecture name.
--- **THIS IS ONLY A CONVENTION**, `structural` is not a keyword!
 architecture structural of bit_eq2 is
     signal q1, q0 : std_logic;
 begin
