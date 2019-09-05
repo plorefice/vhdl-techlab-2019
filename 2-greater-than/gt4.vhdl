@@ -111,7 +111,7 @@ begin
     -- This is a shortcut to instantiate multiple components.
     -- It's called a for-generate loop, and makes life easier with complex structures.
     gen_gt2 : for i in 0 to 1 generate
-        gt2x : entity work.gt2 (structural)
+        gt2x : entity work.gt2 (sop)
                     port map (
                         a => a(2 * I + 1 downto 2 * I),
                         b => b(2 * I + 1 downto 2 * I),
