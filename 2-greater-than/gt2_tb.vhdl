@@ -9,7 +9,7 @@ architecture testbench of gt2_tb is
     signal q    : std_logic;
 begin
 
-    uut: entity work.gt2(structural)
+    uut: entity work.gt2(sop)
                 port map (a => a, b => b, q => q);
 
     tb: process
