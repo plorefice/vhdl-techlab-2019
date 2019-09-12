@@ -39,6 +39,6 @@ architecture structural of bit_eq is
 begin
 
     -- This codifies the above truth table
-    q <=not (a xor b);
+    q <=a xnor b;
 
 end architecture;
