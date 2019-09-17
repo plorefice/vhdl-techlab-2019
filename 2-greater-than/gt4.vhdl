@@ -104,22 +104,23 @@ entity gt4 is
 end entity;
 
 architecture structural of gt4 is
-    signal qi   : std_logic_vector(1 downto 0);
-    signal eq_h : std_logic;
+    signal gt_h, gt_l, eq_h : std_logic;
 begin
 
-    -- This is a shortcut to instantiate multiple components.
-    -- It's called a for-generate loop, and makes life easier with complex structures.
-    gen_gt2 : for i in 0 to 1 generate
-        gt2x : entity work.gt2 (sop)
-                    port map (
-                        a => a(2 * I + 1 downto 2 * I),
-                        b => b(2 * I + 1 downto 2 * I),
-                        q => qi(I)
-                    );
-    end generate;
+    gt2_h : entity work.gt2 (sop)
+            port map (
+                a => a(3 downto 2),
+                b => b(3 downto 2),
+                q => gt_h
+            );
 
-    -- It is possible to mix for-generate with normal instantiations
+    gt2_l : entity work.gt2 (sop)
+            port map (
+                a => a(1 downto 0),
+                b => b(1 downto 0),
+                q => gt_l
+            );
+
     bit_eq2_h : entity work.bit_eq2 (structural)
                 port map (
                     a => a(3 downto 2),
@@ -127,8 +128,6 @@ begin
                     q => eq_h
                 );
 
-    -- According to the above generate loop, qi(1) corresponds to the most significants bits,
-    -- while qi(0) corresponds to the least significant bits.
-    q <= qi(1) or (eq_h and qi(0));
+    q <= gt_h or (eq_h and gt_l);
 
 end architecture;
