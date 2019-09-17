@@ -24,7 +24,7 @@ begin
 
     -- Model clock and reset behaviour outside of the testbench process
     clk <= not clk after T / 2 when running else '0';
-    rst <= '1', '0' AFTER T / 4;
+    rst <= '1', '0' after T / 4;
 
     tb: process begin
         -- Wait for the simulation to run combinatorial logic
