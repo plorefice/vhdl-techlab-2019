@@ -1,0 +1,27 @@
+{
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.0.19  2019-03-26 bk=1.5019 VDI=41 GEI=35 GUI=JA:9.0 TLS
+#  -string -flagsOSRD
+preplace port reset -pg 1 -lvl 0 -x -40 -y -180 -defaultsOSRD
+preplace port pause -pg 1 -lvl 0 -x -40 -y -70 -defaultsOSRD
+preplace port clk_100mhz -pg 1 -lvl 0 -x -40 -y -200 -defaultsOSRD
+preplace portBus kw4_as -pg 1 -lvl 4 -x 900 -y -240 -defaultsOSRD
+preplace portBus kw4_as_pu -pg 1 -lvl 4 -x 900 -y -40 -defaultsOSRD
+preplace portBus kw4_ks -pg 1 -lvl 4 -x 900 -y -160 -defaultsOSRD
+preplace inst demo_0 -pg 1 -lvl 2 -x 440 -y -170 -defaultsOSRD
+preplace inst clk_div_0 -pg 1 -lvl 1 -x 130 -y -190 -defaultsOSRD
+preplace inst kw4_an_pu -pg 1 -lvl 3 -x 730 -y -40 -defaultsOSRD
+preplace inst util_vector_logic_0 -pg 1 -lvl 3 -x 730 -y -240 -defaultsOSRD
+preplace netloc clk_div_0_clk_out 1 1 1 N -190
+preplace netloc rst_0_1 1 0 2 -20 -120 240
+preplace netloc pause_0_1 1 0 2 NJ -70 250J
+preplace netloc clk_in_0_1 1 0 1 N -200
+preplace netloc util_vector_logic_0_Res 1 3 1 N -240
+preplace netloc demo_0_kw4_as 1 2 1 570 -240n
+preplace netloc kw4_an_pu_dout 1 3 1 NJ -40
+preplace netloc demo_0_kw4_ks 1 2 2 NJ -160 NJ
+levelinfo -pg 1 -40 130 440 730 900
+pagesize -pg 1 -db -bbox -sgen -180 -370 1070 220
+"
+}
+

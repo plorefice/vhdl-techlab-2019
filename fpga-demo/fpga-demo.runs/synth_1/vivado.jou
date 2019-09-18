@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Wed Sep 18 11:43:51 2019
+# Process ID: 18525
+# Current directory: /home/pietro/projects/develer/corsi/vhdl-techlab-2019/fpga-demo/fpga-demo.runs/synth_1
+# Command line: vivado -log top_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top_wrapper.tcl
+# Log file: /home/pietro/projects/develer/corsi/vhdl-techlab-2019/fpga-demo/fpga-demo.runs/synth_1/top_wrapper.vds
+# Journal file: /home/pietro/projects/develer/corsi/vhdl-techlab-2019/fpga-demo/fpga-demo.runs/synth_1/vivado.jou
+#-----------------------------------------------------------
+source top_wrapper.tcl -notrace

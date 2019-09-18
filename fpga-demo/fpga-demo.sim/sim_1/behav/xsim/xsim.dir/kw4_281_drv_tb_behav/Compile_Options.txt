@@ -1,0 +1,1 @@
+-wto "654eb60ed8f640dca25586896c0b9b4f" --incr --debug "typical" --relax --mt "8" -L "xil_defaultlib" -L "secureip" -L "xpm" --snapshot "kw4_281_drv_tb_behav" "xil_defaultlib.kw4_281_drv_tb" -log "elaborate.log" 

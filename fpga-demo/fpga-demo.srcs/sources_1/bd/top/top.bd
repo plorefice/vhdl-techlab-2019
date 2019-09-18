@@ -1,0 +1,189 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x4AEA85FF0A03F608",
+      "device": "xc7a100tcsg324-1",
+      "name": "top",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2019.1",
+      "validated": "true"
+    },
+    "design_tree": {
+      "demo_0": "",
+      "clk_div_0": "",
+      "kw4_an_pu": "",
+      "util_vector_logic_0": ""
+    },
+    "ports": {
+      "reset": {
+        "type": "rst",
+        "direction": "I",
+        "parameters": {
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "POLARITY": {
+            "value": "ACTIVE_LOW",
+            "value_src": "default"
+          }
+        }
+      },
+      "pause": {
+        "direction": "I"
+      },
+      "clk_100mhz": {
+        "direction": "I"
+      },
+      "kw4_as": {
+        "direction": "O",
+        "left": "3",
+        "right": "0"
+      },
+      "kw4_as_pu": {
+        "direction": "O",
+        "left": "3",
+        "right": "0"
+      },
+      "kw4_ks": {
+        "direction": "O",
+        "left": "6",
+        "right": "0"
+      }
+    },
+    "components": {
+      "demo_0": {
+        "vlnv": "xilinx.com:module_ref:demo:1.0",
+        "xci_name": "top_demo_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "demo",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "reset": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "clk_1khz": {
+            "direction": "I"
+          },
+          "pause": {
+            "direction": "I"
+          },
+          "kw4_as": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "kw4_ks": {
+            "direction": "O",
+            "left": "6",
+            "right": "0"
+          }
+        }
+      },
+      "clk_div_0": {
+        "vlnv": "xilinx.com:module_ref:clk_div:1.0",
+        "xci_name": "top_clk_div_0_0",
+        "parameters": {
+          "DIV": {
+            "value": "100000"
+          }
+        },
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "clk_div",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "clk_in": {
+            "direction": "I"
+          },
+          "clk_out": {
+            "direction": "O"
+          }
+        }
+      },
+      "kw4_an_pu": {
+        "vlnv": "xilinx.com:ip:xlconstant:1.1",
+        "xci_name": "top_xlconstant_0_0",
+        "parameters": {
+          "CONST_VAL": {
+            "value": "0b1111"
+          },
+          "CONST_WIDTH": {
+            "value": "4"
+          }
+        }
+      },
+      "util_vector_logic_0": {
+        "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
+        "xci_name": "top_util_vector_logic_0_0",
+        "parameters": {
+          "C_OPERATION": {
+            "value": "not"
+          },
+          "C_SIZE": {
+            "value": "4"
+          }
+        }
+      }
+    },
+    "nets": {
+      "clk_div_0_clk_out": {
+        "ports": [
+          "clk_div_0/clk_out",
+          "demo_0/clk_1khz"
+        ]
+      },
+      "rst_0_1": {
+        "ports": [
+          "reset",
+          "clk_div_0/rst",
+          "demo_0/reset"
+        ]
+      },
+      "pause_0_1": {
+        "ports": [
+          "pause",
+          "demo_0/pause"
+        ]
+      },
+      "clk_in_0_1": {
+        "ports": [
+          "clk_100mhz",
+          "clk_div_0/clk_in"
+        ]
+      },
+      "util_vector_logic_0_Res": {
+        "ports": [
+          "util_vector_logic_0/Res",
+          "kw4_as"
+        ]
+      },
+      "demo_0_kw4_as": {
+        "ports": [
+          "demo_0/kw4_as",
+          "util_vector_logic_0/Op1"
+        ]
+      },
+      "kw4_an_pu_dout": {
+        "ports": [
+          "kw4_an_pu/dout",
+          "kw4_as_pu"
+        ]
+      },
+      "demo_0_kw4_ks": {
+        "ports": [
+          "demo_0/kw4_ks",
+          "kw4_ks"
+        ]
+      }
+    }
+  }
+}
