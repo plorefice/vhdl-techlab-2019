@@ -64,6 +64,7 @@ begin
 
         -- Finally, make sure nothing happens on the clock's falling edge
         wait until falling_edge(clk);
+        wait for 0 ns;
 
         assert q = '1'  report "Q changed on falling clock front" severity failure;
         assert qn = '0' report "/Q changed on falling clock front" severity failure;
