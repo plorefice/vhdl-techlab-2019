@@ -66,3 +66,10 @@ $ alias gktwave = /Applications/gtkwave.app/Contents/Resources/bin/gtkwave
 ```
 
 The `gtkwave` command should now be working correctly.
+
+### `ghdl` version
+
+The above commands have been tested to work with `ghdl v0.36`.
+
+It's likely that older versions will use a different syntax for compiling and running a design,
+so either refer to those versions' manual or update.
