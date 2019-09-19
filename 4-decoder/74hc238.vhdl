@@ -46,6 +46,6 @@ begin
               "10000000" when others;
 
     -- Assign output signals
-    Y <= Yi when E = "001" else "00000000";
+    Y <= Yi when E = "100" else "00000000";
 
 end architecture;
